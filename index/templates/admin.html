@@ -1,0 +1,72 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/requests.css' %}">
+<link rel="stylesheet" href="{% static 'css/modals.css' %}">
+<link rel="stylesheet" href="{% static 'css/references.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ADMIN</title>
+</head>
+<body>
+     <div class="modal_layout">
+        <ul class="modal_window_help">
+            <span class="close">X</span>
+            <li><span class="yellow_circle"></span><p>Новая заявка</p></li>
+            <li><span class="green_circle"></span><p>Принятая заявка</p></li>
+            <li><span class="blue_circle"></span><p>Отклонённая заявка</p></li>
+        </ul>
+    </div>
+    <ul class="references">
+        <li class="icon_logout"><a href="/logout/"><img src="/static/imgs/icon_logout.png"></a></li>
+        <li class="help">?</li>
+    </ul>
+    <ul class="requests">
+        {% for req in requests %}
+            <li>
+                <div
+                    {% if req.6 == 1 %}
+                        class="base_info yellow"
+                    {% elif req.6 == 2 %}
+                        class="base_info green"
+                    {% elif req.6 == 3 %}
+                        class="base_info blue"
+                    {% endif %}
+                >
+                    <p class="expand" data-id="{{ req.7 }}" data-show="0">▽</p>
+                    <p>{{ req.0 }}</p>
+                    <p>{{ req.1 }}</p>
+                    <p>{{ req.2 }}</p>
+                    <p>{{ req.3 }}</p>
+                </div>
+                <div
+                    {% if req.6 == 1 %}
+                        class="detail_info yellow"
+                    {% elif req.6 == 2 %}
+                        class="detail_info green"
+                    {% elif req.6 == 3 %}
+                        class="detail_info blue"
+                    {% endif %}
+                    data-id="{{ req.7 }}"
+                >
+                    <p class="date">{{ req.5 }}</p>
+                    <p>{{ req.4 }}</p>
+                    <div class="actions">
+                        {% if req.6 == 1 %}
+                            <a class="accept" href="/accept?act=True&id={{ req.7 }}">Принять</a>
+                            <a class="reject" href="/reject?act=True&id={{ req.7 }}">Отклонить</a>
+                        {% elif req.6 == 2 %}
+                            <a class="done" href="/done?act=True&id={{ req.7 }}">Выполнено</a>
+                        {% elif req.6 == 3 %}
+                            <a class="resume" href="/resume?act=True&id={{ req.7 }}">Возобновить</a>
+                            <a class="delete" href="/delete?act=True&id={{ req.7 }}">Удалить</a>
+                        {% endif %}
+                    </div>
+                </div>
+            </li>
+        {% endfor %}
+    </ul>
+    <script src="/static/js/requests.js"></script>
+</body>
+</html>

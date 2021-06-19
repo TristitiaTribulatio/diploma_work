@@ -1,0 +1,32 @@
+div.status_of_requests, div.create_request {
+    background-color: #ffb5b5;
+    min-width: 40%;
+    text-align: center;
+    font-size: 2em;
+    padding: 2%;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+div.status_of_requests {
+    margin-bottom: 5%;
+}
+
+div.icon_enter_bg {
+    position: absolute;
+    top: 1%;
+    left: 1%;
+    min-width: 50px;
+    min-height: 50px;
+    background-color: #ff8b8b;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+img.icon_enter {
+    max-width: 40px;
+    max-height: 40px;
+}

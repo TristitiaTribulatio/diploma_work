@@ -1,0 +1,184 @@
+div.modal_layout {
+    position: absolute;
+    min-width: 100vw;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, .5);
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+
+form {
+    display: none;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffc0c0;
+    position: relative;
+    border-radius: 10px;
+}
+
+form.modal_window_auth {
+    min-width: 25vw;
+    min-height: 35vh;
+}
+
+span.close {
+    cursor: pointer;
+    position: absolute;
+    right: 1%;
+    top: 1%;
+}
+
+input {
+    padding: 3%;
+    outline: none;
+    border: 0;
+    border-radius: 5px;
+}
+
+input, textarea, select {
+    font-size: 1.2em;
+}
+
+input[type='submit'] {
+    cursor: pointer;
+    background-color: #ff8b8b;
+}
+
+ul.auth_ul {
+    display: flex;
+    flex-flow: column wrap;
+}
+
+ul.auth_ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input#login, input#pass {
+    min-width: 70%;
+}
+
+input#login {
+    margin-bottom: 10%;
+}
+
+input.auth {
+    width: 50%;
+}
+
+form.modal_window_create {
+    min-width: 50vw;
+    min-height: 60vh;
+}
+
+ul.request_ul {
+    min-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+ul.request_ul li {
+    min-width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+textarea#desc {
+    min-width: 40vw;
+    max-width: 40vw;
+    min-height: 25vh;
+    max-height: 25vh;
+    font-size: 1.2em;
+}
+
+select#themes, textarea#desc {
+    outline: none;
+    border: 0;
+    padding: 1%;
+    border-radius: 10px;
+}
+
+input#name, input#phone, input#email, select#themes {
+    min-width: 30%;
+    padding: 2%;
+    margin-bottom: 1%;
+}
+
+input.create {
+    min-width: 30%;
+    padding: 1%;
+}
+
+form.modal_window_status {
+    min-width: 25vw;
+    min-height: 20vh;
+}
+
+ul.status_ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 100%;
+}
+
+ul.status_ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+}
+
+input#phone_status {
+    padding: 5%;
+}
+
+input.send_code {
+    min-width: 30%;
+    padding: 2%;
+}
+
+ul.modal_window_help {
+    min-width: 20vw;
+    min-height: 25vh;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: #ffc0c0;
+    position: relative;
+    border-radius: 10px;
+}
+
+ul.modal_window_help li {
+    min-width: 80%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 1.2em;
+}
+
+ul.modal_window_help li span {
+    min-width: 30px;
+    min-height: 30px;
+    border-radius: 50px;
+}
+
+span.yellow_circle {
+    background-color: #fffad1;
+}
+
+span.green_circle {
+    background-color: #d7ffc9;
+}
+
+span.blue_circle {
+    background-color: #a8cbff;
+}

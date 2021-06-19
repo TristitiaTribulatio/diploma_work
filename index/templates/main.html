@@ -1,0 +1,45 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+<link rel="stylesheet" href="{% static 'css/modals.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MAIN</title>
+</head>
+<body>
+    <div class="modal_layout">
+        <form class="modal_window_auth" method="post" action="auth/">
+            {% csrf_token %}
+            <span class="close">X</span>
+            <ul class="auth_ul">
+                {{ auth.as_ul }}
+            </ul>
+            <input type="submit" class="auth" value="Авторизироваться">
+        </form>
+        <form class="modal_window_create" method="post" action="request/">
+            {% csrf_token %}
+            <span class="close">X</span>
+            <ul class="request_ul">
+                {{ request.as_ul }}
+            </ul>
+            <input type="submit" class="create" value="Создать заявку">
+        </form>
+        <form class="modal_window_status" method="post" action="status/">
+            {% csrf_token %}
+            <span class="close">X</span>
+            <ul class="status_ul">
+                {{ status.as_ul }}
+            </ul>
+            <input type="submit" class="send_code" value="Получить код">
+        </form>
+    </div>
+    <div class="icon_enter_bg" data-name="auth">
+        <img src="/static/imgs/icon_enter.png" class="icon_enter" data-name="auth">
+    </div>
+    <div class="status_of_requests" data-name="status">Проверить статус заявок</div>
+    <div class="create_request" data-name="create">Оставить новую заявку</div>
+    <script src="static/js/main.js"></script>
+</body>
+</html>

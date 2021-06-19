@@ -1,0 +1,85 @@
+ul.requests {
+    min-height: 90vh;
+    min-width: 75vw;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: 10px;
+    background-color: #ffc0c0;
+}
+
+ul.requests li {
+    min-width: 85%;
+    display: flex;
+    flex-flow: column wrap;
+}
+
+ul.requests li div {
+    padding: 1%;
+    border-radius: 10px;
+}
+
+ul.requests div.base_info {
+    font-size: 1.2em;
+    display: grid;
+    grid-template-columns: 1fr 3fr 4fr 4fr 4fr;
+    margin: 1% 0;
+}
+
+ul.requests div.detail_info {
+    display: none;
+    flex-flow: column wrap;
+    justify-content: space-evenly;
+    align-items: flex-start;
+    min-height: 20vh;
+}
+
+ul.requests div.detail_info p {
+    min-width: 100%;
+    text-align: left;
+}
+
+ul.requests p {
+    text-align: center;
+}
+
+p.expand {
+    cursor: pointer;
+}
+
+p.date {
+    font-size: .8em;
+}
+
+ul.requests div.yellow {
+    background-color: #fffad1;
+}
+
+ul.requests div.green {
+    background-color: #d7ffc9;
+}
+
+ul.requests div.blue {
+    background-color: #a8cbff;
+}
+
+div.detail_info div.actions {
+    min-width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: transparent;
+}
+
+div.actions a {
+    text-align: center;
+    padding: 1%;
+    min-width: 20%;
+    font-size: 1.2em;
+    text-decoration: none;
+    color: #000000;
+    background-color: #ffc0c0;
+    border-radius: 10px;
+}

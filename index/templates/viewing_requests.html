@@ -1,0 +1,72 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="stylesheet" href="{% static 'css/check_code.css' %}">
+<link rel="stylesheet" href="{% static 'css/requests.css' %}">
+<link rel="stylesheet" href="{% static 'css/modals.css' %}">
+<link rel="stylesheet" href="{% static 'css/references.css' %}">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VIEW REQUESTS</title>
+</head>
+<body>
+    <div class="modal_layout">
+        <ul class="modal_window_help">
+            <span class="close">X</span>
+            <li><span class="yellow_circle"></span><p>Новая заявка</p></li>
+            <li><span class="green_circle"></span><p>Принятая заявка</p></li>
+            <li><span class="blue_circle"></span><p>Отклонённая заявка</p></li>
+        </ul>
+    </div>
+    {% if code %}
+        <ul class="references">
+            <li class="back"><a href="/"><</a></li>
+            <li class="help">?</li>
+        </ul>
+        <ul class="requests">
+            {% for req in requests %}
+                <li>
+                    <div
+                        {% if req.6 == 1 %}
+                            class="base_info yellow"
+                        {% elif req.6 == 2 %}
+                            class="base_info green"
+                        {% elif req.6 == 3 %}
+                            class="base_info blue"
+                        {% endif %}
+                    >
+                        <p class="expand" data-id="{{ req.7 }}" data-show="0">▽</p>
+                        <p>{{ req.0 }}</p>
+                        <p>{{ req.1 }}</p>
+                        <p>{{ req.2 }}</p>
+                        <p>{{ req.3 }}</p>
+                    </div>
+                    <div
+                        {% if req.6 == 1 %}
+                            class="detail_info yellow"
+                        {% elif req.6 == 2 %}
+                            class="detail_info green"
+                        {% elif req.6 == 3 %}
+                            class="detail_info blue"
+                        {% endif %}
+                        data-id="{{ req.7 }}"
+                    >
+                        <p class="date">{{ req.5 }}</p>
+                        <p>{{ req.4 }}</p>
+                    </div>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <form class="form_code" method="post" action="/code/">
+            {% csrf_token %}
+            <ul class="code_ul">
+                {{ code_form.as_ul }}
+            </ul>
+            <input type="submit" name="check_code" class="check_code">
+        </form>
+    {% endif %}
+    <script src="/static/js/requests.js"></script>
+</body>
+</html>

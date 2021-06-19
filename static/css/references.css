@@ -1,0 +1,51 @@
+ul.references {
+    min-height: 10vh;
+    min-width: 100vw;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    align-items: center;
+}
+
+ul.references li {
+    min-width: 50px;
+    min-height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+li.back {
+    background-color: #ff8b8b;
+    margin-left: 1%;
+}
+
+li.back a {
+    width: 50px;
+    height: 50px;
+    border-radius: 10px;
+    text-decoration: none;
+    color: #000000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+li.help {
+    color: #ffffff;
+    background-color: #000000;
+    margin-right: 1%;
+}
+
+li.icon_logout {
+    background-color: #ff8b8b;
+    margin-left: 1%;
+}
+
+li.icon_logout a img {
+    max-width: 40px;
+    max-height: 40px;
+}
